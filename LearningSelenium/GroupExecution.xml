@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="Functionality&amp;IntegrationTesting">
+
+
+	<parameter name="url" value="https://www.saucedemo.com/"></parameter>
+	<parameter name="userName" value="standard_user"></parameter>
+	<parameter name="passWord" value="secret_sauce"></parameter>
+
+	<groups>
+		<run>
+			<exclude name="IT"></exclude>
+		</run>
+	</groups>
+	
+	
+	<test thread-count="5" parallel="tests" name="Test_1">
+		<parameter name="browser" value="edge"></parameter>
+		<classes>
+			<class name="LearningTestNG.GoupExecution" />
+		</classes>
+	</test> <!--
+	Test -->
+
+
+	<test thread-count="5" parallel="tests" name="Test_2">
+		<parameter name="browser" value="chrome"></parameter>
+		<classes>
+			<class name="LearningTestNG.GoupExecution" />
+		</classes>
+	</test> <!--
+	Test -->
+</suite> <!--
+Functionality&IntegrationTesting -->

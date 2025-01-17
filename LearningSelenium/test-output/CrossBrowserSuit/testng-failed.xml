@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="Failed suite [CrossBrowserSuit]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" parallel="tests" name="chrome_test(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="LearningTestNG.AddProduct">
+        <methods>
+          <include name="browserSetup"/>
+          <include name="removeProduct"/>
+          <include name="browserTermination"/>
+          <include name="addFirstProduct"/>
+          <include name="login"/>
+          <include name="logout"/>
+        </methods>
+      </class> <!-- LearningTestNG.AddProduct -->
+      <class name="LearningTestNG.AddProduct2">
+        <methods>
+          <include name="addFirstProduct"/>
+          <include name="browserSetup"/>
+          <include name="removeProduct"/>
+          <include name="browserTermination"/>
+          <include name="login"/>
+          <include name="logout"/>
+        </methods>
+      </class> <!-- LearningTestNG.AddProduct2 -->
+    </classes>
+  </test> <!-- chrome_test(failed) -->
+  <test thread-count="5" parallel="tests" name="edge_test(failed)">
+    <parameter name="browser" value="edge"/>
+    <classes>
+      <class name="LearningTestNG.AddProduct">
+        <methods>
+          <include name="browserSetup"/>
+          <include name="removeProduct"/>
+          <include name="browserTermination"/>
+          <include name="addFirstProduct"/>
+          <include name="login"/>
+          <include name="logout"/>
+        </methods>
+      </class> <!-- LearningTestNG.AddProduct -->
+      <class name="LearningTestNG.AddProduct2">
+        <methods>
+          <include name="addFirstProduct"/>
+          <include name="browserSetup"/>
+          <include name="removeProduct"/>
+          <include name="browserTermination"/>
+          <include name="login"/>
+          <include name="logout"/>
+        </methods>
+      </class> <!-- LearningTestNG.AddProduct2 -->
+    </classes>
+  </test> <!-- edge_test(failed) -->
+</suite> <!-- Failed suite [CrossBrowserSuit] -->

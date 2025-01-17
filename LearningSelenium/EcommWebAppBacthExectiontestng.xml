@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="AddTheProductToCart">
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="e_Comm_Project.ImplementedClass"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- AddTheProductToCart -->

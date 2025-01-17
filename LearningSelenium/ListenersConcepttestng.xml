@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite_Functional">
+	<listeners>
+		<listener class-name="ListenerConcept.ImplementTestScript"></listener>
+	
+	</listeners>
+  <test thread-count="5" name="edgeTest">
+    <classes>
+      <class name="ListenerConcept.TestScript"/>
+    </classes>
+  </test> <!-- edgeTest -->
+</suite> <!-- Suite_Functional -->

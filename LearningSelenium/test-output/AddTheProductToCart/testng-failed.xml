@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [AddTheProductToCart]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Test(failed)">
+    <classes>
+      <class name="e_Comm_Project.ImplementedClass">
+        <methods>
+          <include name="addproduct_3"/>
+          <include name="logout"/>
+          <include name="addproduct_2"/>
+          <include name="browserSetup"/>
+          <include name="browserTermination"/>
+          <include name="login"/>
+        </methods>
+      </class> <!-- e_Comm_Project.ImplementedClass -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [AddTheProductToCart] -->

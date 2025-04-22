@@ -1,7 +1,9 @@
 package DataDrivenTesting;
 
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 
 import org.apache.poi.EncryptedDocumentException;
 import org.apache.poi.hssf.usermodel.HSSFWorkbookFactory;
@@ -42,7 +44,7 @@ public class ReadDataFromExcelFile {
 
 	}
 
-	@Test
+	@Test(enabled = false)
 	public void readTheRecord() throws EncryptedDocumentException, IOException {
 
 		// Step to fetch the records from the excel file
@@ -80,8 +82,8 @@ public class ReadDataFromExcelFile {
 //		System.out.println("================");
 
 		// step 7.get the last column in the excel file
-		 int lastColumn = wb.getSheet("BasicData").getRow(0).getLastCellNum();
-		 System.out.println(lastColumn);
+		int lastColumn = wb.getSheet("BasicData").getRow(0).getLastCellNum();
+		System.out.println(lastColumn);
 
 		for (int i = 1; i <= lastRow; i++) {
 			int lastColumn1 = wb.getSheet("BasicData").getRow(i).getLastCellNum();
@@ -94,6 +96,49 @@ public class ReadDataFromExcelFile {
 			System.out.println("===============");
 		}
 
+	}
+
+	
+
+	@Test
+	public void writeSingleData_NewRow() throws EncryptedDocumentException, IOException {
+		// create New Row and Create data
+
+		// Step to fetch the records from the excel file
+
+		// step 1. convert the physical file into java underStandable file
+		FileInputStream fis = new FileInputStream("./Data/EmployeeDetails.xlsx");
+
+		// step 2.create a workbook factory
+		Workbook wb = WorkbookFactory.create(fis);
+
+		// step 3.identify the sheet name
+		String sheet = "BasicData";
+		Sheet sheet1 = wb.getSheet(sheet);
+
+		// step 4.identify the last row num
+		int row1 = sheet1.getLastRowNum();
+		
+		//step 5.create a new row
+		Row row = sheet1.createRow(row1+1);
+		
+		//create a new column
+		Cell cell = row.createCell(0);
+		
+		// create a new row and enter the data
+		cell.setCellValue("jaheer");
+
+		
+		// write the data
+		
+		FileOutputStream fos=new FileOutputStream("./Data/EmployeeDetails.xlsx");
+		try {
+
+			wb.write(fos);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }
